@@ -1,0 +1,37 @@
+{
+    "title": "reanalysis_downscaler",
+    "summary": "The aim of the project is to create a Machine learning (ML) model that can generate high-resolution regional reanalysis data (similar to the one produced by CERRA) by downscaling global reanalysis data from ERA5.",
+    "description": [
+		"reanalysis_downscaler is an application using the DEEPaaS API.\n",
+        "Write additional information for your users (how to predict, how to retrain,",
+        "dataset description, training description, etc)."
+    ],
+    "keywords": [
+        "docker",
+        "api-v2"
+    ],
+    "license": "Apache 2.0",
+    "date_creation": "2023-11-20",
+    "sources": {
+		"dockerfile_repo": "https://github.com/jpxkqx/mediterranean_reanalysis_downscaler/DEEP-OC-reanalysis_downscaler",
+		"docker_registry_repo": "jpxkqx/deep-oc-reanalysis_downscaler",
+		"code": "https://github.com/jpxkqx/mediterranean_reanalysis_downscaler/reanalysis_downscaler"
+	},
+    "continuous_integration": {
+        "build_status_badge": "https://jenkins.indigo-datacloud.eu/buildStatus/icon?job=Pipeline-as-code/DEEP-OC-org/DEEP-OC-reanalysis_downscaler/master",
+        "build_status_url": "https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/job/DEEP-OC-reanalysis_downscaler/job/master"
+    },
+    "tosca": [
+        {
+            "title": "Mesos (CPU)",
+            "url": "https://raw.githubusercontent.com/indigo-dc/tosca-templates/master/deep-oc/deep-oc-marathon-webdav.yml",
+            "inputs": [
+                "rclone_conf",
+                "rclone_url",
+                "rclone_vendor",
+                "rclone_user",
+                "rclone_pass"
+            ]
+        }
+    ]
+}
